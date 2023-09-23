@@ -18,8 +18,8 @@ spec:
         image: 
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "100Mi"
+            cpu: "80m"
         ports:
         - containerPort: 3000
 ---
