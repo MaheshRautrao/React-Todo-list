@@ -3,7 +3,7 @@
 This is a React To do list app developed by me to learn and enhance my react skills.
 
  
- ## Tech Stack
+ ## Tech Stack tools
 
   `React` `HTML` `CSS` `Javascript`
 
