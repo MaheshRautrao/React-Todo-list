@@ -3,8 +3,20 @@ import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
 import { v4 as uuidv4 } from "uuid";
 import { EditTodoForm } from "./EditTodoForm";
+import { useLayoutEffect } from "react"
 
 export const TodoWrapper = () => {
+  const [products, setProducts] = useState([]);
+      const [dialog, setDialog] = useState(false)
+      const [productDelete, setProductDelete] = useState({})
+      async function getProducts(){
+          const response = await fetch("/api/products-get");
+          const productsApi = await response.json();
+          setProducts(productsApi)
+      }
+      useLayoutEffect(()=>{
+          getProducts()
+      },[])
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
@@ -46,19 +58,21 @@ export const TodoWrapper = () => {
       <TodoForm addTodo={addTodo} />
       {/* display todos */}
       hola
-      {todos.map((todo) =>
-        todo.isEditing ? (
-          <EditTodoForm editTodo={editTask} task={todo} />
-        ) : (
-          <Todo
-            key={todo.id}
-            task={todo}
-            deleteTodo={deleteTodo}
-            editTodo={editTodo}
-            toggleComplete={toggleComplete}
-          />
-        )
-      )}
+      <h3>Products</h3>
+          {products.length === 0 && <span>Agrega Productos</span>}
+          <ul>
+              {
+                  products.map((product) => <li key={product.id}>
+                      {product.name}: <br />
+                      {product.description} <b>{product.quantity}</b> 
+                      {/* <button onClick={()=>{navigate("/edit", {state: product})}}>Editar</button> */}
+                      <button onClick={()=>{
+                          setDialog(true)
+                          setProductDelete(product)
+                      }}>Eliminar</button>
+                  </li>)
+              }
+          </ul>
     </div>
   );
 };
