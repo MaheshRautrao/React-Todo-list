@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 //export const Todo = ({task, deleteTodo, editTodo, toggleComplete}) => {
   import { useLayoutEffect, useState } from "react"
   import { useNavigate } from "react-router-dom";
-  const Products = ({newNotification}) => {
+  const Todo = ({newNotification}) => {
       const navigate = useNavigate()
       const [products, setProducts] = useState([]);
       const [dialog, setDialog] = useState(false)
