@@ -13,8 +13,8 @@ export  const Todo = () => {
           getProducts()
       },[])
       return <section>
-          <h3>Products</h3>
-          {products.length === 0 && <span>Agrega Productos</span>}
+          <h3 className='label'>Productos</h3>
+          {products.length === 0}
           <ul>
               {
                   products.map((product) => <li key={product.id}>

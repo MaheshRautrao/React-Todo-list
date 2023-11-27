@@ -35,6 +35,10 @@ h1 {
   width: 100%;
 }
 
+.label{
+  color: white;
+}
+
 .todo-input {
   outline: none;
   background: none;
@@ -78,5 +82,20 @@ h1 {
 .completed {
   color: #c5aeff;
   text-decoration: line-through;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.contenedor > div {
+  width: auto;
+  
+}
+
+.grid {
+  grid-column-gap: 20px;
 }
  

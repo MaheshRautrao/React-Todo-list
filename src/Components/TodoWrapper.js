@@ -15,11 +15,21 @@ export const TodoWrapper = () => {
   }
 
   return (
-    <div className="TodoWrapper">
-      <h1>Lista de productos!</h1>
-      <TodoForm addTodo={addTodo} />
-      {/* display todos */}
-      <Todo />
+    <div className="">
+    <div className="contenedor grid">
+      <div className="TodoWrapper">
+        <h1>Lista de productos!</h1>
+        <div>
+          <TodoForm addTodo={addTodo} />
+        </div>
+        {/* display todos */}
+      </div>
+
+      <div className="TodoWrapper">
+        <Todo />
+      </div>
+      
+    </div>
     </div>
   );
 };
