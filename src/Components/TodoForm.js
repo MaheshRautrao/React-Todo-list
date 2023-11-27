@@ -22,7 +22,9 @@ export const TodoForm = ({newNotification}) => {
                 })
             }).catch((error) => console.error("Error:", error))
             const status = await response.json()
-            
+            if(status.created){
+                newNotification(status.message)
+            }
         }}>
             <fieldset>
                 <legend>Agregar Producto</legend>
