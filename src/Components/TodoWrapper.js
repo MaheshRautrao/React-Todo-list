@@ -66,10 +66,10 @@ export const TodoWrapper = () => {
                       {product.name}: <br />
                       {product.description} <b>{product.quantity}</b> 
                       {/* <button onClick={()=>{navigate("/edit", {state: product})}}>Editar</button> */}
-                      <button onClick={()=>{
+                      {/* <button onClick={()=>{
                           setDialog(true)
                           setProductDelete(product)
-                      }}>Eliminar</button>
+                      }}>Eliminar</button> */}
                   </li>)
               }
           </ul>
