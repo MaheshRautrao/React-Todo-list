@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Todo } from "./Todo";
+// import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
 import { v4 as uuidv4 } from "uuid";
-import { EditTodoForm } from "./EditTodoForm";
+// import { EditTodoForm } from "./EditTodoForm";
 import { useLayoutEffect } from "react"
 
 export const TodoWrapper = () => {
   const [products, setProducts] = useState([]);
-      const [dialog, setDialog] = useState(false)
-      const [productDelete, setProductDelete] = useState({})
+      // const [dialog, setDialog] = useState(false)
+      // const [productDelete, setProductDelete] = useState({})
       async function getProducts(){
           const response = await fetch("/api/products-get");
           const productsApi = await response.json();
@@ -26,31 +26,31 @@ export const TodoWrapper = () => {
     ]);
   }
 
-  const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
+  // const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
-  const toggleComplete = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  }
+  // const toggleComplete = (id) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  //     )
+  //   );
+  // }
 
-  const editTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
-      )
-    );
-  }
+  // const editTodo = (id) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+  //     )
+  //   );
+  // }
 
-  const editTask = (task, id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
-      )
-    );
-  };
+  // const editTask = (task, id) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+  //     )
+  //   );
+  // };
 
   return (
     <div className="TodoWrapper">
