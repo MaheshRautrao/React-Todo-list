@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 //export const Todo = ({task, deleteTodo, editTodo, toggleComplete}) => {
   import { useLayoutEffect, useState } from "react"
   import { useNavigate } from "react-router-dom";
-  const Todo = ({newNotification}) => {
+export  const Todo = ({newNotification, task, deleteTodo, editTodo, toggleComplete}) => {
       const navigate = useNavigate()
       const [products, setProducts] = useState([]);
       const [dialog, setDialog] = useState(false)
@@ -62,4 +62,3 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
           </dialog>
       </section>
   }
-  export default Products
