@@ -22,7 +22,7 @@ export  const Todo = ({newNotification}) => {
                   products.map((product) => <li key={product.id}>
                       {product.name}: <br />
                       {product.description} <b>{product.quantity}</b>
-                      <button onClick={()=>{
+                      <button className="todo-btn" onClick={()=>{
                         setDialog(true)
                         setProductDelete(product)
                     }}>Eliminar</button>
